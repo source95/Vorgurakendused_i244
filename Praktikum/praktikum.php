@@ -3,16 +3,7 @@
 error_reporting(E_ALL);
 ini_set('display_errors', 1);
 
-	$host = "localhost";
-    $user = "test";
-    $pass = "t3st3r123";
-    $db = "test";
 
-    $l = mysqli_connect($host, $user, $pass, $db);
-    mysqli_query($l, "SET CHARACTER SET UTF8") or
-            die("Error, ei saa andmebaasi charsetti seatud");
-   
-    mysqli_close($l);
 
 ?>
 <!DOCTYPE html>
@@ -54,5 +45,39 @@ echo  'Current PHP version: ' . phpversion();
             alt="Valid CSS!" />
     </a>
 </p>
+<?php
+$host = "localhost";
+    $user = "test";
+    $pass = "t3st3r123";
+    $db = "test";
+
+    // Connecting, selecting database
+$link = mysqli_connect($host, $user, $pass, $db)
+    or die('Could not connect: ' . mysqli_error());
+	echo 'Connected successfully';
+	mysqli_select_db($link, $db) or die('Could not select database');
+
+// Performing SQL query
+$query = "SELECT id, Nimi, Perekonnanimi FROM t10163322t";
+$result = mysqli_query($link, $query) or die('Query failed: ' . mysqli_error($link));
+
+// Printing results in HTML
+echo "<table>\n";
+while ($line = mysqli_fetch_array($result, MYSQL_ASSOC)) {
+    echo "\t<tr>\n";
+    foreach ($line as $col_value) {
+        echo "\t\t<td>$col_value</td>\n";
+    }
+    echo "\t</tr>\n";
+}
+echo "</table>\n";
+
+// Free resultset
+mysqli_free_result($result);
+
+// Closing connection
+mysqli_close($link);
+
+?>
 </body>
 </html>
