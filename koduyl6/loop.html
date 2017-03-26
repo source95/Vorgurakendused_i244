@@ -20,7 +20,17 @@
 			else{
 				active.siblings("li:first").addClass('active');
 			}
-		});
+		});		
+		$( "#prev" ).click(function(){
+			prev = document.getElementById('prev');
+			var active = $(".active").removeClass('active');
+			if (active.prev() && active.prev().length){
+				active.prev().addClass('active');				
+			}
+			else{
+				active.siblings("li:last").addClass('active');
+			}
+		});				
 		};
 	</script>
 </head>
