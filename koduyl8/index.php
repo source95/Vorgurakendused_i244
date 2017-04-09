@@ -35,6 +35,9 @@ if (isset($_POST['border_style']) && $_POST['border_style']!="") {
 <meta charset="utf-8" />
 <title> Kodutöö8 </title>
 <style>
+fieldset {
+  display: inline-block;
+}
 body {background: <?php echo $bg_col; ?>; }
 .textbox {
   color:      <?php echo $te_col; ?>; 
@@ -46,15 +49,15 @@ body {background: <?php echo $bg_col; ?>; }
  }
 </style>
 </head>
-
+<h1>Andmete edastamine PHP-st</h1>
 <body>
-<textarea class="textbox" rows="4" cols="50" placeholder="You entered:">
+<textarea class="textbox" rows="4" cols="50" >
 <?php
 echo $all_text; 
 ?>
 </textarea>
 <br>
-<br>
+<hr width="400" align="left"> 
 <br>
 <form method="post" action="" id="usrform">
     <textarea name="text" form="usrform" rows="4" cols="50" placeholder="Please enter text"></textarea> <br>
@@ -73,6 +76,7 @@ echo $all_text;
         <option value="dashed">dashed</option>
     </select>
     </fieldset>
+    <br>
     <input type="submit" name="submit" />
   </form>
 
