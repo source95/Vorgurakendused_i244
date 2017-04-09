@@ -5,49 +5,33 @@
 <title> Transpordi reg </title>
 <style>
 h1{text-align: center;}
-
- th, td {   
-	border: 2px solid #000000;
-	padding: 8px;
-}
-table {
-border-collapse: collapse;
-}
-table#t01{
-	border="1";
-	
-}
-
 </style>
+<script>
+//Variant proverki polja v forme
+function validateForm() {
+    var x = document.forms["uus_transport"]["auto_regnr"].value;
+    if (x == "") {
+        alert("Name must be filled out");
+        return false;
+    }
+}
+</script>
 </head>
 
 <body>
-<h1>Uue transpordi registreeriminne</h1>
-<form  name=f3 method=get action=#>
-<input type="hidden" name="date" value="<?php echo $mydate; ?>">
-<input type="hidden" name="time" value="<?php echo $mytime; ?>">
-<table id="t01">
-<caption>Table1: </caption>
+<h1>Uue transpordi registreerimine</h1>
 
-  <tr>
-    <th>Sõiduki reg NR:</th>
-    <td>798</td>
-  </tr>
-  <tr>
-    <th>Autojuhi NR:</th>
-    <td>nimi</td>
-  </tr>
-  <tr>
-    <th>Dokumendi NR</th>
-    <td>089855</td>
-  </tr>
-  <tr>
-    <th>Transporditeenuse pakkuja</th>
-    <td>teare</td>
-  </tr>
-  
-  
-</table>
+<form name="uus_transport" method="post" action="uus_transport.php" onsubmit="return validateForm()">
+    Sõiduki reg NR: <input type="text" name="auto_regnr"><br>
+    Autojuhi nimi  <input type="text" name="juhi_nimi" required><br>
+    Dokumendi NR  <input type="text" name="dok_nr" required><br>
+    <!-- Kaup <input type="radio" name="kaup" value="sisse" > Sisse
+     <input type="radio" name="kaup" value="välja"> Välja<br> -->
+     Kaup <input type="checkbox" name="kaup_sisse" value="sisse"> Sisse 
+          <input type="checkbox" name="kaup_valja" value="välja"> Välja <br>
+    <br>
+    <input type="submit" name="submit" />
+  </form>
 <br>
 
 
