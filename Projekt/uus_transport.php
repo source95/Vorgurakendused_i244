@@ -1,37 +1,45 @@
-<?php 
-
-$dt = new DateTime();
-$nameErr ="";
-
-
-if (isset($_POST['auto_regnr']) && $_POST['auto_regnr']!="") {
-    $auto_reg_nr=htmlspecialchars($_POST['auto_regnr']);
-  }
-if (isset($_POST['juhi_nimi']) && $_POST['juhi_nimi']!="") {
-    $autojuhi_nimi=htmlspecialchars($_POST['juhi_nimi']);
-  }
-if (isset($_POST['dok_nr']) && $_POST['dok_nr']!="") {
-    $dokument_nr=htmlspecialchars($_POST['dok_nr']);
-  } 
-if (isset($_POST['kaup_sisse']) && $_POST['kaup_sisse']!="") {
-    $kaup_sisse=htmlspecialchars($_POST['kaup_sisse']);
-  } 
-if (isset($_POST['kaup_valja']) && $_POST['kaup_valja']!="") {
-    $kaup_valja=htmlspecialchars($_POST['kaup_valja']);
-  } 
-
-echo $auto_reg_nr;
-echo "<br>";
-echo $autojuhi_nimi; 
-echo "<br>";
-echo $dokument_nr; 
-echo "<br>";
-echo $kaup_sisse; 
-echo "<br>";
-echo $kaup_valja; 
-echo "<br>";
-
-echo $dt->format('Y-m-d H:i:s');
-
-
+<?php
+session_start(); // Session starts here.
 ?>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title> Transpordi reg </title>
+<link rel="stylesheet" href="style.css" />
+
+</head>
+<body>
+ <div class="container">
+ <div class="main">
+ <h2>Uue transpordi registreerimine</h2>
+ <span id="error">
+<!--  Initializing Session for errors -->
+ <?php
+ if (!empty($_SESSION['error'])) {
+ echo $_SESSION['error'];
+ unset($_SESSION['error']);
+ }
+ ?>
+ </span>
+
+<!-- <h1>Uue transpordi registreerimine</h1> -->
+
+<form name="uus_transport" method="post" action="uus_transport_kinnita.php" >
+    Sõiduki reg NR: <input type="text" name="auto_regnr" required><br>
+    Autojuhi nimi  <input type="text" name="juhi_nimi" required><br>
+    Dokumendi NR  <input type="text" name="dok_nr" required><br>
+    <!-- Kaup <input type="radio" name="kaup" value="sisse" > Sisse
+     <input type="radio" name="kaup" value="välja"> Välja<br> -->
+     Kaup <input type="checkbox" name="kaup_sisse" value="sisse"> Sisse 
+          <input type="checkbox" name="kaup_valja" value="välja"> Välja <br>
+    <br>
+     <input type="reset" value="Reset" />
+    <input type="submit" value="Edasi" name="submit" />
+  </form>
+<br>
+
+ </div>
+ </div>
+</body>
+</html>
