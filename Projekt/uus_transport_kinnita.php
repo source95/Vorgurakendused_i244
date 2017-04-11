@@ -23,7 +23,7 @@ if (isset($_POST['auto_regnr'])){
 <html>
  <head>
  <title>Uue transpordi registreerimise kinnitus</title>
- <link rel="stylesheet" href="style.css" />
+ <link rel="stylesheet" href="uus_transport.css" />
  </head>
  <body>
  <div class="container">
@@ -43,10 +43,9 @@ if (!empty($_SESSION['error_page2'])) {
 $dt = new DateTime();
 $nameErr ="";
 
-/*extract($_SESSION['post']); // Function to extract array.
-unset($_SESSION['post']); // Destroying session.
-*/
-/*if (isset($_POST['auto_regnr']) && $_POST['auto_regnr']!="") {
+
+
+if (isset($_POST['auto_regnr']) && $_POST['auto_regnr']!="") {
     $auto_reg_nr=htmlspecialchars($_POST['auto_regnr']);
   }
 if (isset($_POST['juhi_nimi']) && $_POST['juhi_nimi']!="") {
@@ -60,13 +59,13 @@ if (isset($_POST['kaup_sisse']) && $_POST['kaup_sisse']!="") {
   } 
 if (isset($_POST['kaup_valja']) && $_POST['kaup_valja']!="") {
     $kaup_valja=htmlspecialchars($_POST['kaup_valja']);
-  } */
+  } 
 
-echo $auto_regnr;
+echo $auto_reg_nr;
 echo "<br>";
-echo $juhi_nimi; 
+echo $autojuhi_nimi; 
 echo "<br>";
-echo $dok_nr; 
+echo $dokument_nr; 
 echo "<br>";
 echo $kaup_sisse; 
 echo "<br>";
