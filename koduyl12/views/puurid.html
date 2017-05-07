@@ -1,0 +1,15 @@
+<?php if(!empty($loomad)):
+foreach ($loomad as $key => $loom):
+?>
+
+<div>Puuris nr. <?php echo ($key);?> asuvad loomad<?php foreach ($loom as $value):?>
+
+    <p><img src="<?php echo $value;?>"></p> <?php next ($loomad);?>
+    <?php
+endforeach;
+?>
+</div>
+<?php
+endforeach;
+endif;
+?>
