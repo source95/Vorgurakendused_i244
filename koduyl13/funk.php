@@ -1,6 +1,5 @@
 <?php
 
-
 function connect_db(){
 	global $connection;
 	$host="localhost";
@@ -55,8 +54,11 @@ function logout(){
 
 function kuva_puurid(){
 	// siia on vaja funktsionaalsust 12.nädal
-
-   global $connection;
+global $connection;
+  
+  if (empty($_SESSION['user'])) {
+		header("Location: ?page=login");
+	} else {
     $puurid = array();
     $puuri_nr = array();
     $sqlquery = "SELECT DISTINCT puur FROM ffjodoro_loomaaed3 order by puur";
@@ -81,7 +83,7 @@ while ($rida = mysqli_fetch_assoc($result)){
             array_push($loomad[$rida['puur']], $rida['liik']);
 
         }}
-
+}
 	//testimiseks
    /* echo "<pre>";
     print_r($loomad);
@@ -93,7 +95,32 @@ while ($rida = mysqli_fetch_assoc($result)){
 
 function lisa(){
 	// siia on vaja funktsionaalsust (13. nädalal)
-	
+
+global $connection;
+  
+  if (empty($_SESSION['user'])) {
+		header("Location: ?page=login");
+	} else {
+   if($_SERVER["REQUEST_METHOD"] == "POST") {
+      if (upload("liik") == ""){
+      	$errors[] = "Error";
+      }else{
+      	upload('liik');
+      	$nimi = mysqli_real_escape_string($connection, $_POST['nimi']);
+		$puur = mysqli_real_escape_string($connection, $_POST['puur']);
+		$liik = mysqli_real_escape_string($connection, upload("liik"));
+      $insert = "INSERT INTO ffjodoro_loomaaed3 (nimi, puur, liik) VALUES ('$nimi', '$puur', '$liik')";
+      $result = mysqli_query($connection,$insert);
+     
+      if(mysqli_insert_id($connection)){
+	   		//echo "lisatud";
+      			header("Location: ?page=loomad");
+	   		} else {
+	   			header("Location: ?page=lisa");
+	   		}      
+      } 
+	}
+}
 	include_once('views/loomavorm.html');
 	
 }
