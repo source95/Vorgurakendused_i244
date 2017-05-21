@@ -1,0 +1,23 @@
+<?php if(!empty($loomad)):
+foreach ($loomad as $key => $loom):
+?>
+
+<div>Puuris nr. <?php echo ($key);?> asuvad loomad<?php foreach ($loom as $value):?>
+
+	<?php if($_SESSION["role"] == "admin"): ?>
+				<a href="?page=muuda&id=<?php echo $lm['id']?>">
+			<?php endif; ?>
+
+
+    <p><img src="<?php echo $value;?>"></p> <?php next ($loomad);?>
+
+	<?php if($_SESSION["role"] == "admin"): ?>
+				</a>
+	<?php endif; ?>
+
+    <?php endforeach; ?>
+</div>
+<?php
+endforeach;
+endif;
+?>
