@@ -2,7 +2,7 @@
 <html>
  <head>
  <title>Salvesta</title>
- <link rel="stylesheet" href="style.css" />
+ <link rel="stylesheet" href="uus_transport.css" />
  </head>
  <body>
  <div class="container">
@@ -14,9 +14,11 @@ extract($_SESSION['post']); // Function to extract array.
 unset($_SESSION['post']); // Destroying session.
 
  include 'db_connect.php';
+
+ $mysqltime = date ("Y-m-d H:i:s"); 
  
  // An insertion query. $result will be `true` if successful
-  $result = db_query("INSERT INTO uus_transport (auto_regnr, juhi_nimi, dok_nr) VALUES ('$auto_regnr','$juhi_nimi', '$dok_nr')");
+  $result = db_query("INSERT INTO uus_transport (auto_regnr, juhi_nimi, dok_nr, dateposted) VALUES ('$auto_regnr','$juhi_nimi', '$dok_nr', '$mysqltime')");
    if($result === false) {
    		$error = db_error();
    		echo '<p><span>Form Submission Failed..!!</span></p>';
