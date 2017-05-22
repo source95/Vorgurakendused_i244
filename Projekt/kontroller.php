@@ -12,11 +12,11 @@ switch ($leht) {
 	case 'uus_transport':
 		require_once('uus_transport.php');
 		break;
-	case 'galerii':
-		require_once('galerii.php');
+	case 'home':
+		require_once('home.html');
 		break;
-	case 'vote':
-		require_once('vote.php');
+	case 'query':
+		require_once('query.php');
 			break;	
 	case 'tulemus':
 		require_once('tulemus.php');
