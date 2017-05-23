@@ -1,15 +1,8 @@
-<?php
-session_start(); // Session starts here.
-?>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="utf-8" />
-<title> Transpordi reg </title>
-<link rel="stylesheet" href="style.css" />
+<!-- <?php
+//session_start(); // Session starts here. Exist in kontroller.php
+?> -->
+<link rel="stylesheet" href="css/uus_transport.css" />
 
-</head>
-<body>
  <div class="container">
  <div class="main">
  <h2>Uue transpordi registreerimine</h2>
@@ -22,9 +15,7 @@ session_start(); // Session starts here.
  }
  ?>
  </span>
-
 <!-- <h1>Uue transpordi registreerimine</h1> -->
-
 <form name="uus_transport" method="post" action="uus_transport_kinnita.php" >
     Sõiduki reg NR: <input type="text" name="auto_regnr" required><br>
     Autojuhi nimi  <input type="text" name="juhi_nimi" required><br>
@@ -38,8 +29,5 @@ session_start(); // Session starts here.
     <input type="submit" value="Edasi" name="submit" />
   </form>
 <br>
-
  </div>
  </div>
-</body>
-</html>
