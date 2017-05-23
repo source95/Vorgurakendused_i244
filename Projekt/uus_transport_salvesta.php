@@ -2,7 +2,7 @@
 <html>
  <head>
  <title>Salvesta</title>
- <link rel="stylesheet" href="uus_transport.css" />
+ <link rel="stylesheet" href="css/uus_transport.css" />
  </head>
  <body>
  <div class="container">
