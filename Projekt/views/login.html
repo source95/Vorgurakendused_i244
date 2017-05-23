@@ -1,0 +1,34 @@
+<link rel="stylesheet" href="css/login.css" />
+
+
+<div class="container">
+  <div class="row">
+    <div class="Absolute-Center is-Responsive">
+      <div id="logo-container"></div>
+      <div class="col-sm-12 col-md-10 col-md-offset-1">
+        <form action="?page=login" method="POST" id="loginForm">
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            <input class="form-control" type="text" name='user' placeholder="kasutajanimi"/>          
+          </div>
+          <div class="form-group input-group">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+            <input class="form-control" type="password" name='pass' placeholder="parool"/>     
+          </div>
+          <div class="form-group">
+            <button type="submit" value="logi sisse!" class="btn btn-def btn-block">Login</button>
+          </div>
+          <div class="form-group text-center">
+            <a href="mailto:helpdesk@example.com">Support</a>
+          </div>
+        </form> 
+		<?php if (isset($errors)):?>
+		<?php foreach($errors as $error):?>
+			<div style="color:red;"><?php echo htmlspecialchars($error); ?></div>
+		<?php endforeach;?>
+		<?php endif;?>
+
+      </div>  
+    </div>    
+  </div>
+</div>
