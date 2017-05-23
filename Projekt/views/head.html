@@ -9,8 +9,8 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
- <link rel="stylesheet" href="mainpage.css" /> 
- <link rel="stylesheet" href="uus_transport.css" />
+ <link rel="stylesheet" href="css/mainpage.css" /> 
+ <!-- <link rel="stylesheet" href="css/uus_transport.css" /> -->
  
  </head>
  <body>
@@ -30,10 +30,15 @@
         <li class="active"><a href="?page=home">Home</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Projects</a></li>
-        <li><a href="#">Kontakt</a></li>
+        <li><a href="?page=kontakt">Kontakt</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+
+       <?php if(isset($_SESSION['user'])): ?>
+      <li><a href="?page=logout"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+      <?php else: ?>
+      <li><a href="?page=login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      <?php endif; ?>
       </ul>
     </div>
   </div>
@@ -42,11 +47,11 @@
 <div class="container-fluid text-center">    
   <div class="row content">
     <div class="col-sm-2 sidenav">
+    <?php if(isset($_SESSION['user'])): ?>
       <p><a href="?page=uus_transport">Registreerimine</a></p>
       <p><a href="?page=query">Query</a></p>
       <p><a href="#">Link</a></p>
+    <?php endif; ?>
     </div>
     <div class="col-sm-8 text-left"> 
     <div>
-
-     
