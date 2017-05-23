@@ -1,4 +1,5 @@
 <?php
+require_once('views/head.html');
 session_start();
 	 
 if (isset($_POST['auto_regnr'])){
@@ -23,7 +24,7 @@ if (isset($_POST['auto_regnr'])){
 <html>
  <head>
  <title>Uue transpordi registreerimise kinnitus</title>
- <link rel="stylesheet" href="uus_transport.css" />
+ <link rel="stylesheet" href="css/uus_transport.css" />
  </head>
  <body>
  <div class="container">
@@ -82,3 +83,5 @@ echo $dt->format('Y-m-d H:i:s');
  </div>
  </body>
 </html>
+
+<?php require_once('views/foot.html'); ?>
