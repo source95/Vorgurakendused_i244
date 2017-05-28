@@ -1,6 +1,9 @@
 <h1>Welcome</h1>
       <p>
-      Tere "kasutajanimi"
+       <?php 
+      if(isset($_SESSION['user'])){
+    echo "Tere {$_SESSION['user']}";}
+      ?>
       	Olete sisselogitud 
       </p>
       <hr>
