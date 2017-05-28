@@ -6,12 +6,12 @@ function connect_db(){
 	$user="test";
 	$pass="t3st3r123";
 	$db="test";
-	$connection = mysqli_connect($host, $user, $pass, $db) or die("ei saa ühendust mootoriga- ".mysqli_error());
+	$connection = mysqli_connect($host, $user, $pass, $db) or die("ei saa ühendust SQL'ga- ".mysqli_error());
 	mysqli_query($connection, "SET CHARACTER SET UTF8") or die("Ei saanud baasi utf-8-sse - ".mysqli_error($connection));
 }
 
 function logi(){
-	// siia on vaja funktsionaalsust (13. nädalal)
+	
  global $connection;
   
   if (!empty($_SESSION['user'])) {
@@ -19,7 +19,6 @@ function logi(){
 	} else {		
    if($_SERVER["REQUEST_METHOD"] == "POST") {
       // username and password sent from form 
-
       $myusername = mysqli_real_escape_string($connection,$_POST['user']);
       $mypassword = mysqli_real_escape_string($connection,$_POST['pass']); 
       $sqlrole = "SELECT role FROM ffjodoro_users WHERE username = '$myusername'";
@@ -32,8 +31,7 @@ function logi(){
       
       $count = mysqli_num_rows($result);
       
-      // If result matched $myusername and $mypassword, table row must be 1 row
-		
+      // If result matched $myusername and $mypassword, table row must be 1 row		
       if($count == 1) {
          
          $_SESSION['user'] = $myusername;
@@ -54,3 +52,10 @@ function logout(){
 	session_destroy();
 	header("Location: ?");
 }
+
+function DTime(){
+   $dt = new DateTime();
+   echo $dt->format('Y-m-d H:i:s');
+}
+
+?>
