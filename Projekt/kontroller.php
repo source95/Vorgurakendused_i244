@@ -3,10 +3,6 @@ require_once('functions.php');
 session_start();
 connect_db();
 require_once('views/head.html');
- ?>
-
-<?php 
-
 
 if (!empty($_GET)){
 $leht = htmlspecialchars($_GET["page"]);
@@ -14,6 +10,12 @@ $leht = htmlspecialchars($_GET["page"]);
 switch ($leht) {
 	case 'uus_transport':
 			require_once('uus_transport.php');
+		break;
+	case 'uus_transport_kinnita':
+			require_once('uus_transport_kinnita.php');
+		break;
+	case 'uus_transport_salvesta':
+			require_once('uus_transport_salvesta.php');
 		break;
 	case 'home':
 			require_once('views/home.html');
