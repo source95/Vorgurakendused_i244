@@ -1,4 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway);
+@import url(http://fonts.googleapis.com/css?family=Roboto);
 div.container{
  width: auto;
 }
@@ -7,7 +8,7 @@ div.main{
  border-radius: 5px;
  Border:2px solid #999900;
  
- font-family: 'Raleway', sans-serif;
+ font-family: 'Roboto', Arial, sans-serif;
 }
 #error{
  display:block;
@@ -17,6 +18,9 @@ div.main{
 #success{
  color:green;
  font-weight:bold;
+ text-align: center;
+ margin-top: 20px;
+ margin-bottom: 20px;
 }
 span{
  color:red;
