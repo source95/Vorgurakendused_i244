@@ -8,12 +8,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+  <script src="realtime.php"></script>
  <link rel="stylesheet" href="css/mainpage.css" /> 
  <!-- <link rel="stylesheet" href="css/uus_transport.css" /> -->
  
  </head>
- <body>
+ <body onLoad="startTime();">
  
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
@@ -49,9 +49,9 @@
     <div class="col-sm-2 sidenav">
     <?php if(isset($_SESSION['user'])): ?>
       <p><a href="?page=uus_transport">Registreerimine</a></p>
-      <p><a href="?page=query">Query</a></p>
-      <p><a href="#">Link</a></p>
+      <p><a href="?page=query">Päring</a></p>
+      <p><a href="#">Other</a></p>
     <?php endif; ?>
     </div>
-    <div class="col-sm-8 text-left"> 
+    <div class="col-sm-8 "> 
     <div>
