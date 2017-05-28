@@ -1,37 +1,33 @@
-<!DOCTYPE HTML>
-<html>
- <head>
- <title>Salvesta</title>
+<?php
+if (empty($_SESSION['user'])) {
+        header("Location: ?page=login");
+    } else {
+?>
+
  <link rel="stylesheet" href="css/uus_transport.css" />
- </head>
- <body>
  <div class="container">
  <div class="main">
- <h2>Salvest1</h2>
+ <h2>Salvestamine</h2>
  <?php
- session_start();
 extract($_SESSION['post']); // Function to extract array.
 unset($_SESSION['post']); // Destroying session.
 
  include 'db_connect.php';
 
- $mysqltime = date ("Y-m-d H:i:s"); 
- 
- // An insertion query. $result will be `true` if successful
-  $result = db_query("INSERT INTO uus_transport (auto_regnr, juhi_nimi, dok_nr, dateposted) VALUES ('$auto_regnr','$juhi_nimi', '$dok_nr', '$mysqltime')");
+$mytime = date ("Y-m-d H:i:s"); 
+$kaupsisse = $_SESSION["kaup"]['kaupsisse'];
+$kaupvalja = $_SESSION["kaup"]['kaupvalja'];
+$kasutajanimi = $_SESSION['user'];
+
+  $result = db_query("INSERT INTO uus_transport (auto_regnr, juhi_nimi, dok_nr, vedaja, estakaad, kaup_sisse, kaup_valja, dateposted, kasutajanimi) VALUES ('$auto_regnr','$juhi_nimi', '$dok_nr', '$vedaja', '$estakaad', '$kaupsisse', '$kaupvalja', '$mytime', '$kasutajanimi')");
    if($result === false) {
    		$error = db_error();
-   		echo '<p><span>Form Submission Failed..!!</span></p>';
-        // Handle failure - log the error, notify administrator, etc.
+   		echo '<p><span>Salvestamine ebaõnnestus!</span></p>';        
     } else {
-    	echo '<p><span id="success">Form Submitted successfully..!!</span></p>';
-        // We successfully inserted a row into the database
+    	echo '<p><span id="success">Andmed salvestatud!</span></p>';
     }
-
-
 
  ?>
  </div>
  </div>
- </body>
-</html>
+<?php } ?>
