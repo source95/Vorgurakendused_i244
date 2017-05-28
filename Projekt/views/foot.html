@@ -4,10 +4,15 @@
     </div>
     <div class="col-sm-2 sidenav sidenav-inverse">
       <div class="well">
-        <p>ADS</p>
+        <p><span id="realtime"></span> </p>
       </div>
       <div class="well">
-        <p>ADS</p>
+        <p>
+        <?php 
+        if(isset($_SESSION['user'])){
+        echo "Tere {$_SESSION['user']}";}
+        ?>
+        </p>
       </div>
     </div>
   </div>
