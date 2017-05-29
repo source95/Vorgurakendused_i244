@@ -1,19 +1,24 @@
 <?php
+if (empty($_SESSION['user'])) {
+        header("Location: ?page=login");
+    } else {
 
-include 'db_connect.php';
+$kasutajanimi = $_SESSION['user'];
 
-$sql = "SELECT * FROM uus_transport";
+$sql = "SELECT * FROM uus_transport WHERE kasutajanimi = '$kasutajanimi'";
 $result = db_query($sql);
-
-echo '<table class="table table-striped table-bordered table-hover">'; // start a table tag in the HTML
 ?>
+<h3>Kuvatud read mis on teie kasutajanimi all oli lisatud</h3>
+<table class="table table-striped table-bordered table-hover">
+
 <thead>
         <tr>
             <th>No</th>
-            <th>Time</th>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Type</th>
+            <th>Kuupäev</th>
+            <th>Sõiduki regNR</th>
+            <th>Dokumendi NR</th>
+            <th>Autojuhi Nimi</th>
+            <th>Kauba vedaja</th>
         </tr>
     </thead>
  
@@ -22,14 +27,16 @@ echo '<table class="table table-striped table-bordered table-hover">'; // start 
           <tr>
             <td><?php echo $row['id']; ?></td>
             <td><?php echo $row['dateposted']; ?></td>
-            <td><?php echo $row[2]; ?></td>
-            <td><?php echo $row[3]; ?></td>
-            <td><?php echo $row[4]; ?></td>
+            <td><?php echo $row['auto_regnr']; ?></td>
+            <td><?php echo $row['dok_nr']; ?></td>
+            <td><?php echo $row['juhi_nimi']; ?></td>
+            <td><?php echo $row['vedaja']; ?></td>
           </tr>
       <?php } ?>
     </tbody>
+
+</table>
+
 <?php
-
-echo "</table>"; //Close the table in HTML
-
+}
  ?>
