@@ -37,14 +37,14 @@ if (empty($_SESSION['user'])) {
 	</style>
 	</head>
 	
-	<body>
-    <div class="demo-content">
+	
+    <!-- <div class="demo-content">  -->
 		<h2 class="title_with_link">Recent Articles</h2>
   <form name="frmSearch" method="post" action="">
 	 <p class="search_input">
 		<input type="text" placeholder="Alates" id="post_at" name="search[post_at]"  value="<?php echo $post_at; ?>" class="input-control" />
 	    <input type="text" placeholder="Kuni" id="post_at_to_date" name="search[post_at_to_date]" style="margin-left:10px"  value="<?php echo $post_at_to_date; ?>" class="input-control"  />			 
-		<input type="submit" name="go" value="Search" >
+		<input type="submit" name="go" value="Otsi" >
 	</p>
 <?php if(!empty($result))	 { ?>
 <table class="table table-striped table-bordered table-hover">
@@ -75,7 +75,7 @@ if (empty($_SESSION['user'])) {
   </table>
 <?php } ?>
   </form>
-  </div>
+  <!-- </div> -->
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script>
 $.datepicker.setDefaults({
@@ -90,7 +90,7 @@ $("#post_at").datepicker();
 $("#post_at_to_date").datepicker();
 });
 </script>
-</body></html>
+</html>
 
 <?php
 }
