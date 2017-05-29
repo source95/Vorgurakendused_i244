@@ -12,8 +12,6 @@ if (empty($_SESSION['user'])) {
 extract($_SESSION['post']); // Function to extract array.
 unset($_SESSION['post']); // Destroying session.
 
- include 'db_connect.php';
-
 $mytime = date ("Y-m-d H:i:s"); 
 $kaupsisse = $_SESSION["kaup"]['kaupsisse'];
 $kaupvalja = $_SESSION["kaup"]['kaupvalja'];
