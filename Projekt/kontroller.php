@@ -4,10 +4,11 @@ session_start();
 connect_db();
 require_once('views/head.html');
 
-if (!empty($_GET)){
-$leht = htmlspecialchars($_GET["page"]);
-
-switch ($leht) {
+$page="pealeht";
+if (isset($_GET['page']) && $_GET['page']!=""){
+$page = htmlspecialchars($_GET["page"]);
+}
+switch ($page) {
 	case 'uus_transport':
 			require_once('uus_transport.php');
 		break;
@@ -20,29 +21,35 @@ switch ($leht) {
 	case 'home':
 			require_once('views/home.html');
 		break;
+	case 'about':
+			require_once('views/about.html');
+		break;
 	case 'query':
 			require_once('query.php');
 			break;	
-	case 'tulemus':
-			require_once('tulemus.php');
-		break;
+	case 'querybydate':
+			require_once('querybydate.php');
+			break;	
+	case 'export':
+			require_once('views/export.html');
+			break;	
 	case 'login':
 			logi();
 		break;
 	case "logout":
 			logout();
-	break;
+			break;
 	case 'loggedin':
 			require_once('views/loggedin.html');
-		break;	
+			break;	
 	case 'kontakt':
 			require_once('views/kontakt.html');
 			break;	
 	default:
-		# code...
+		include_once('views/home.html');
 		break;
 	}
-}
+
 
 require_once('views/foot.html'); 
 ?>
