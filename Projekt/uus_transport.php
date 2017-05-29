@@ -16,15 +16,12 @@ if (empty($_SESSION['user'])) {
  }
  ?>
  </span>
-<!-- <h1>Uue transpordi registreerimine</h1> -->
 <form name="uus_transport" method="post" action="?page=uus_transport_kinnita" >
     Sõiduki reg NR: <input type="text" name="auto_regnr" required><br>
     Autojuhi nimi  <input type="text" name="juhi_nimi" required><br>
     Dokumendi NR  <input type="text" name="dok_nr" required><br>
     Kauba vedaja  <input type="text" name="vedaja" required><br>
     Estakaad  <input type="number" name="estakaad" min="1" max="25" required><br>
-    <!-- Kaup <input type="radio" name="kaup" value="sisse" > Sisse
-     <input type="radio" name="kaup" value="välja"> Välja<br> -->
      Kaup <br>
      <input type="checkbox" name="kaup_sisse" value="jah"> Sisse 
      <input type="checkbox" name="kaup_valja" value="jah"> Välja <br>
