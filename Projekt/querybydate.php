@@ -38,8 +38,8 @@ if (empty($_SESSION['user'])) {
 	</head>
 	
 	
-    <!-- <div class="demo-content">  -->
-		<h2 class="title_with_link">Recent Articles</h2>
+    <div class="table-responsive"> 
+		<h2 class="title_with_link">Registreeritud transport</h2>
   <form name="frmSearch" method="post" action="">
 	 <p class="search_input">
 		<input type="text" placeholder="Alates" id="post_at" name="search[post_at]"  value="<?php echo $post_at; ?>" class="input-control" />
@@ -47,7 +47,7 @@ if (empty($_SESSION['user'])) {
 		<input type="submit" name="go" value="Otsi" >
 	</p>
 <?php if(!empty($result))	 { ?>
-<table class="table table-striped table-bordered table-hover">
+<table class="table table-striped table-bordered table-hover table-responsive">
 
 <thead>
         <tr>
@@ -75,7 +75,7 @@ if (empty($_SESSION['user'])) {
   </table>
 <?php } ?>
   </form>
-  <!-- </div> -->
+  </div>
 <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 <script>
 $.datepicker.setDefaults({
