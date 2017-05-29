@@ -64,24 +64,48 @@ if (isset($_POST['kaup_valja']) && ($_POST['kaup_valja']=="jah")) {
 $_SESSION['kaup'] = array();
 $_SESSION['kaup']['kaupsisse'] = $kaupsisse;
 $_SESSION['kaup']['kaupvalja'] = $kaupvalja;
-
-echo $auto_reg_nr;
-echo "<br>";
-echo $autojuhi_nimi; 
-echo "<br>";
-echo $dokument_nr; 
-echo "<br>";
-echo $kauba_vedaja; 
-echo "<br>";
-echo $estakaad; 
-echo "<br>";
-echo $kaupsisse; 
-echo "<br>";
-echo $kaupvalja; 
-echo "<br>";
-DTime();
-
 ?>
+
+<div >
+<table class="table table-striped table-bordered table-hover center">
+    <tbody>
+           <tr>
+            <th>Sõiduki regNR</th>
+            <td><?php echo $auto_reg_nr; ?></td>
+           </tr>
+           <tr>
+            <th>Autojuhi nimi</th>
+            <td><?php echo $autojuhi_nimi; ?></td>            
+           </tr>
+           <tr>
+            <th>Dokumendi NR</th>
+            <td><?php echo $dokument_nr;  ?></td>            
+           </tr>
+           <tr>
+            <th>Kauba vedaja</th>
+            <td><?php echo $kauba_vedaja; ?></td>            
+          </tr>
+          <tr>
+            <th>Estakaad</th>
+            <td><?php echo $estakaad; ?></td>            
+          </tr>
+          <tr>
+            <th> Kaup sisse</th>
+            <td><?php echo $kaupsisse; ?></td>            
+          </tr>
+           <tr>
+            <th>Kaup välja</th>
+            <td><?php echo $kaupvalja; ?></td>            
+          </tr>
+           <tr>
+            <th>Aeg</th>
+            <td><?php DTime(); ?></td>            
+          </tr>
+    </tbody>
+
+</table>
+</div>
+
 <form action="?page=uus_transport_salvesta" method="post">
 <input type="submit" value="Kinnita" />
 </form>
