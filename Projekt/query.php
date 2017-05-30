@@ -8,6 +8,7 @@ $kasutajanimi = $_SESSION['user'];
 $sql = "SELECT * FROM uus_transport WHERE kasutajanimi = '$kasutajanimi'";
 $result = db_query($sql);
 ?>
+<div class="table-responsive"> 
 <h3>Kuvatud read mis on teie kasutajanimi all oli lisatud</h3>
 <table class="table table-striped table-bordered table-hover">
 
@@ -36,7 +37,7 @@ $result = db_query($sql);
     </tbody>
 
 </table>
-
+</div>
 <?php
 }
  ?>
