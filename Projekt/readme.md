@@ -1,7 +1,9 @@
 
 Veebileht andmete registreerimisks ühe logistika ettevõtte jaoks.
+
 Praegu realiseeritud territooriumile sisse sõidavate auto registreerimiseks
 ja andmebaasist päring: kuupäeva ja kasutaja järgi, ning CSV failisse eksport.
+
 Eesmärk oli teha valmis põhi, mille alusel edaspidi väga lihtne oleks lisada vajalik funktsionaalsus.
 
 
