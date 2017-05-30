@@ -9,9 +9,9 @@ Eesmärk oli teha valmis põhi, mille alusel edaspidi väga lihtne oleks lisada 
 
 Responsive web
 
-Leidsin endale huvitavamaks optimiseerida leht nutiseadmete jaoks, ehk responsive leht.
-Selleks oli kasutatud klassid bootstrapist.
-Testisin responsivus iOS seadmel (Iphone 6s).
+Leidsin endale huvitavamaks optimiseerida leht nutiseadmete jaoks, ehk responsive leht.<br />
+Selleks oli kasutatud klassid bootstrapist.<br />
+Testisin responsivus iOS seadmel (Iphone 6s).<br />
 
 
 Kasutajad
