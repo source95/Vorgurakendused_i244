@@ -16,8 +16,8 @@ Kasutajad <br />
 user: admin pwd: admin <br />
 user: user  pwd: user <br />
 
-Mis on edaspidi plaanis 
-*Vajaliku registreerimise lehte lisamine. (Suledele alladele läbivate inimeste registreerimine, külaliste registreerimine jne) 
-*Kliendi soovi järgi päringute optimiseerimine
-*Logo pildi lisamine
+Mis on edaspidi plaanis <br />
+*Vajaliku registreerimise lehte lisamine. (Suledele alladele läbivate inimeste registreerimine, külaliste registreerimine jne) <br />
+*Kliendi soovi järgi päringute optimiseerimine <br />
+*Logo pildi lisamine <br />
 
