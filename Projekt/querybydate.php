@@ -38,7 +38,7 @@ if (empty($_SESSION['user'])) {
 	</head>
 	
 	
-    <div class="table-responsive"> 
+    <div class="table-responsive" "> 
 		<h2 class="title_with_link">Registreeritud transport</h2>
   <form name="frmSearch" method="post" action="">
 	 <p class="search_input">
@@ -47,6 +47,7 @@ if (empty($_SESSION['user'])) {
 		<input type="submit" name="go" value="Otsi" >
 	</p>
 <?php if(!empty($result))	 { ?>
+<div class="pre-scrollable">
 <table class="table table-striped table-bordered table-hover table-responsive">
 
 <thead>
@@ -73,6 +74,7 @@ if (empty($_SESSION['user'])) {
    <?php  }   ?>
    <tbody>
   </table>
+  </div>
 <?php } ?>
   </form>
   </div>
