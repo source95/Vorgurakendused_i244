@@ -1,4 +1,3 @@
-
 Veebileht andmete registreerimisks ühe logistika ettevõtte jaoks.
 
 Praegu realiseeritud territooriumile sisse sõidavate auto registreerimine
@@ -20,4 +19,7 @@ Mis on edaspidi plaanis <br />
 *Vajaliku registreerimise lehte lisamine. (Suledele alladele läbivate inimeste registreerimine, külaliste registreerimine jne) <br />
 *Kliendi soovi järgi päringute optimiseerimine <br />
 *Logo/pildi lisamine <br />
+
+
+See projekt on tehtud EIK i244 Võrgurakendused aine raames.
 
